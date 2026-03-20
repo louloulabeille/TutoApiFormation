@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TutoApiFormation.Domain\TutoApiFormation.Domain.csproj" />
+    <ProjectReference Include="..\TutoApiformation.Interface\TutoApiformation.Interface.csproj" />
   </ItemGroup>
 
 </Project>
