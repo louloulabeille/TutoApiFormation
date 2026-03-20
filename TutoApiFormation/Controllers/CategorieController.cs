@@ -7,7 +7,7 @@ namespace TutoApiFormation.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    public class Categorie(TutoApiDbContext context) : ControllerBase
+    public class CategorieController(TutoApiDbContext context) : ControllerBase
     {
         #region private properties
         private readonly TutoApiDbContext _context = context;

@@ -22,11 +22,10 @@ namespace TutoApiformation.Infrastructure.Database
         #region protected ovveride
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             // -- Apply model table
             modelBuilder.ApplyConfiguration(new CategorieEntityTypeConfiguration());
 
-
-            base.OnModelCreating(modelBuilder);
         }
         #endregion
     }

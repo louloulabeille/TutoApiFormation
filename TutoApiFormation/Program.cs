@@ -23,6 +23,9 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    // lancement du swagger
+    app.UseSwagger();
+    app.UseSwaggerUI(); // lien https://localhost:7259/swagger/index.html
 }
 
 app.UseHttpsRedirection();
