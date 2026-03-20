@@ -25,6 +25,9 @@ builder.Services.AddRepository();
 //- Injection WorkofUnit
 builder.Services.AddUnitOfWork();
 
+//- Injection MediaR mise en place
+builder.Services.AddMediatRInject();
+
 var app = builder.Build();
 
 

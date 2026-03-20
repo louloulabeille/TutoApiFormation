@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.5" />
   </ItemGroup>
@@ -16,6 +17,10 @@
     <ProjectReference Include="..\TutoApiFormation.Domain\TutoApiFormation.Domain.csproj" />
     <ProjectReference Include="..\TutoApiformation.Infrastructure\TutoApiformation.Infrastructure.csproj" />
     <ProjectReference Include="..\TutoApiformation.Interface\TutoApiformation.Interface.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Applications\Commands\" />
   </ItemGroup>
 
 </Project>
