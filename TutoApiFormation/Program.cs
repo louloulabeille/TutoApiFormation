@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using TutoApiformation.Infrastructure.Database;
+using TutoApiformation.Infrastructure.Repository;
+using TutoApiformation.Interface.Repository;
 using TutoApiFormation.Applications.ExtendMethods;
+using TutoApiFormation.Domain.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +18,12 @@ builder.Services.AddNpgsql(builder.Configuration);
 
 // - Swagger lancement
 builder.Services.AddSwaggerGen();
+
+// - Injection dépendance des Repository
+builder.Services.AddRepository();
+
+//- Injection WorkofUnit
+builder.Services.AddUnitOfWork();
 
 var app = builder.Build();
 

@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TutoApiformation.Infrastructure;
 using TutoApiformation.Infrastructure.Database;
+using TutoApiformation.Interface.UnitOfWork;
 using TutoApiFormation.Applications.DTO.Infrastructure;
+using TutoApiFormation.Domain.Infrastructure;
 
 namespace TutoApiFormation.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    public class CategorieController(TutoApiDbContext context) : ControllerBase
+    public class CategorieController(IUnitOfWork unit) : ControllerBase
     {
         #region private properties
-        private readonly TutoApiDbContext _context = context;
+        private readonly IUnitOfWork _unit = unit;
         #endregion
 
         #region methode controller
@@ -24,13 +27,13 @@ namespace TutoApiFormation.Controllers
         public async Task<IActionResult> GetAll()
         {
 
-            var categories = _context.Categories.Select(item=> new CategorieDTO()
+            var categories = _unit.Repository<Categorie>()!.GetAll().Select(item=> new CategorieDTO()
             { 
                 Title = item.Title,
                 Message = item.Message,
                 Image = item.Image,
                 Count = new Random().Next(100)  // --  il faudra le programmer par la suite pour retourner les leçons dans la base
-            });
+            }).ToList();
 
             if (categories.Count() == 0) return this.BadRequest("Problem with return categories");
             else return this.Ok(categories);
