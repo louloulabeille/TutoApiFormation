@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="TutoApiFormation.Domain/TutoApiFormation.Domain.csproj" />
+  <Project Path="TutoApiformation.Infrastructure/TutoApiformation.Infrastructure.csproj" />
+  <Project Path="TutoApiformation.Interface/TutoApiformation.Interface.csproj" />
+  <Project Path="TutoApiformation.TestUnitaire/TutoApiformation.TestUnitaire.csproj" />
+  <Project Path="TutoApiFormation/TutoApiFormation.csproj" />
+</Solution>
