@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TutoApiformation.Infrastructure.Database;
+using TutoApiFormation.Applications.DTO.Infrastructure;
 
 namespace TutoApiFormation.Controllers
 {
@@ -23,7 +24,17 @@ namespace TutoApiFormation.Controllers
         public async Task<IActionResult> GetAll()
         {
 
-            return this.BadRequest();
+            var categories = _context.Categories.Select(item=> new CategorieDTO()
+            { 
+                Title = item.Title,
+                Message = item.Message,
+                Image = item.Image,
+                Count = new Random().Next(100)  // --  il faudra le programmer par la suite pour retourner les leçons dans la base
+            });
+
+            if (categories.Count() == 0) return this.BadRequest("Problem with return categories");
+            else return this.Ok(categories);
+
         }
 
         #endregion

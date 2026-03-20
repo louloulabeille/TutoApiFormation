@@ -13,6 +13,8 @@ builder.Services.AddOpenApi();
 // - Add extends dbcontext
 builder.Services.AddNpgsql(builder.Configuration);
 
+// - Swagger lancement
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
