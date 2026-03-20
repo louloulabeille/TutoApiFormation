@@ -29,7 +29,6 @@ namespace TutoApiFormation.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-
             /*var categories = _unit.Repository<Categorie>()!.GetAll().Select(item=> new CategorieDTO()
             { 
                 Title = item.Title,
