@@ -42,7 +42,7 @@ namespace TutoApiFormation.Controllers
             */
 
             var categories = await this._mediaR.Send(new SelectAllCategoriesQuery());
-            if (categories.Count() == 0 ) return this.BadRequest("Problem with return categories");
+            if (categories.Count() == 0 ) return this.BadRequest("Empty or internal problem.");
             else return this.Ok(categories);
 
         }
