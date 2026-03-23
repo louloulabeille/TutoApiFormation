@@ -40,7 +40,11 @@ if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
 }
 
 if (app.Environment.IsProduction())
-{
+{   // possibilité de faire des tests comme dans un environnement de production en créant un tunnel qui 
+    // va générer une url (création un tunnel de développement) puis lors de la sortie regarder l'onglet tunnel pour voir
+    // l'url généré il est possible que l'url soit persistant 
+    // https://learn.microsoft.com/fr-fr/shows/on-dotnet/testing-local-apis-on-device-with-dev-tunnels-and-dotnet-maui#time=03m30s
+
     // lancement du swagger aussi pour la production, cela ne sert pas que pour les tests
     app.UseSwagger();
     app.UseSwaggerUI(); // lien https://localhost:7259/swagger/index.html

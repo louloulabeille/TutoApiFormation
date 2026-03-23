@@ -19,7 +19,7 @@ namespace TutoApiFormation.Applications.Queries
                 Title = item.Title,
                 Message = item.Message,
                 Image = item.Image,
-                Count = new Random().Next(100)
+                Count = new Random().Next(100).ToString() + " cours"
             }).ToList();
 
             return result;

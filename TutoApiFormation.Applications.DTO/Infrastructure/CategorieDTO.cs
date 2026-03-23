@@ -16,7 +16,7 @@ namespace TutoApiFormation.Applications.DTO.Infrastructure
         //[JsonPropertyName("Image")]
         public string? Image { get; set; }
         //[JsonPropertyName("Count")]
-        public int Count { get; set; } = 0;
+        public string? Count { get; set; }
 
     }
 }
