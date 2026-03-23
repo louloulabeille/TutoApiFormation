@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TutoApiFormation.Applications.DTO\TutoApiFormation.Applications.DTO.csproj" />
     <ProjectReference Include="..\TutoApiFormation.Domain\TutoApiFormation.Domain.csproj" />
     <ProjectReference Include="..\TutoApiformation.Infrastructure\TutoApiformation.Infrastructure.csproj" />
     <ProjectReference Include="..\TutoApiformation.Interface\TutoApiformation.Interface.csproj" />
@@ -21,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="Applications\Commands\" />
+    <Folder Include="Applications\DTO\" />
   </ItemGroup>
 
 </Project>

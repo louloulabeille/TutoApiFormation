@@ -30,12 +30,18 @@ builder.Services.AddMediatRInject();
 
 var app = builder.Build();
 
-
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
 {
     app.MapOpenApi();
     // lancement du swagger
+    app.UseSwagger();
+    app.UseSwaggerUI(); // lien https://localhost:7259/swagger/index.html
+}
+
+if (app.Environment.IsProduction())
+{
+    // lancement du swagger aussi pour la production, cela ne sert pas que pour les tests
     app.UseSwagger();
     app.UseSwaggerUI(); // lien https://localhost:7259/swagger/index.html
 }

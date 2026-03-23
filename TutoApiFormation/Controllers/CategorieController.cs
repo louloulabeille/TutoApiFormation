@@ -41,8 +41,9 @@ namespace TutoApiFormation.Controllers
             else return this.Ok(categories);
             */
 
+            // - IMediator découplage entre la demande de données et les ordres
             var categories = await this._mediaR.Send(new SelectAllCategoriesQuery());
-            if (categories.Count() == 0 ) return this.BadRequest("Empty or internal problem.");
+            if (!categories.Any() ) return this.BadRequest("Empty or internal problem.");
             else return this.Ok(categories);
 
         }
