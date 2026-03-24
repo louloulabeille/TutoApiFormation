@@ -28,6 +28,9 @@ builder.Services.AddUnitOfWork();
 //- Injection MediaR mise en place
 builder.Services.AddMediatRInject();
 
+//- Ajout d'un filter au niveau de MediaR pour enlever le message au niveau de la licence dans le log
+builder.Logging.AddFilterMediaRLogger();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
