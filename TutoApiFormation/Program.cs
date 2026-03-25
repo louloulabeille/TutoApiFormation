@@ -31,6 +31,12 @@ builder.Services.AddMediatRInject();
 //- Ajout d'un filter au niveau de MediaR pour enlever le message au niveau de la licence dans le log
 builder.Logging.AddFilterMediaRLogger();
 
+//- Mise en place de la stratégie Identity pour sécuriser API avec JwtBearer
+builder.Services.AddCustomIdentityUser();
+builder.Services.AddDefaultAuthenticate(builder.Configuration);
+
+//- 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
