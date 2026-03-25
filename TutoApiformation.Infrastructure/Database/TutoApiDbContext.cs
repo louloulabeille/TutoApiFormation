@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +8,7 @@ using TutoApiFormation.Domain.Infrastructure;
 
 namespace TutoApiformation.Infrastructure.Database
 {
-    public class TutoApiDbContext :DbContext
+    public class TutoApiDbContext : IdentityDbContext
     {
         #region Construc 
         public TutoApiDbContext(): base(){}

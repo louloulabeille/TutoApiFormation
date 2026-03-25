@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TutoApiformation.Infrastructure.Database;
@@ -11,9 +12,11 @@ using TutoApiformation.Infrastructure.Database;
 namespace TutoApiformation.Infrastructure.Migrations
 {
     [DbContext(typeof(TutoApiDbContext))]
-    partial class TutoApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260325084405_InitialIdentity")]
+    partial class InitialIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
