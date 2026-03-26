@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using TutoApiformation.Infrastructure.Database.TypeConfiguration;
-using TutoApiFormation.Domain.Infrastructure;
+using TutoApiFormation.Domain;
 
 namespace TutoApiformation.Infrastructure.Database
 {
@@ -17,7 +17,11 @@ namespace TutoApiformation.Infrastructure.Database
         #endregion
 
         #region public properties
+        // - Infrastructure
         public DbSet<Categorie> Categories { get; set; }
+
+        // - Domain Métier
+        public DbSet<Formation> Formations { get; set; }
         #endregion
 
         #region protected ovveride
@@ -26,6 +30,7 @@ namespace TutoApiformation.Infrastructure.Database
             base.OnModelCreating(modelBuilder);
             // -- Apply model table
             modelBuilder.ApplyConfiguration(new CategorieEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new FormationEntityTypeConfiguration());
 
         }
         #endregion

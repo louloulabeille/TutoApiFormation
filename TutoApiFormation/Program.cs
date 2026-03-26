@@ -3,7 +3,7 @@ using TutoApiformation.Infrastructure.Database;
 using TutoApiformation.Infrastructure.Repository;
 using TutoApiformation.Interface.Repository;
 using TutoApiFormation.Applications.ExtendMethods;
-using TutoApiFormation.Domain.Infrastructure;
+using TutoApiFormation.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TutoApiFormation.Domain.Infrastructure;
+using TutoApiFormation.Domain;
 
 namespace TutoApiformation.Infrastructure.Database.TypeConfiguration
 {
@@ -15,6 +15,8 @@ namespace TutoApiformation.Infrastructure.Database.TypeConfiguration
             builder.HasKey(c => c.Id);
             builder.Property(c=>c.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Property(c => c.Title).IsRequired();
+
+            builder.HasIndex(c => c.Id).HasDatabaseName("IdIndex");
         }
     }
 }

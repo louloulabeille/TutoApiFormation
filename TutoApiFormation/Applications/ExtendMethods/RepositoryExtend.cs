@@ -1,6 +1,6 @@
 ﻿using TutoApiformation.Infrastructure.Repository;
 using TutoApiformation.Interface.Repository;
-using TutoApiFormation.Domain.Infrastructure;
+using TutoApiFormation.Domain;
 
 namespace TutoApiFormation.Applications.ExtendMethods
 {

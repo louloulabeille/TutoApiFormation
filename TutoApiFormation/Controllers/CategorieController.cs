@@ -6,7 +6,7 @@ using TutoApiformation.Infrastructure.Database;
 using TutoApiformation.Interface.UnitOfWork;
 using TutoApiFormation.Applications.DTO.Infrastructure;
 using TutoApiFormation.Applications.Queries;
-using TutoApiFormation.Domain.Infrastructure;
+using TutoApiFormation.Domain;
 
 namespace TutoApiFormation.Controllers
 {

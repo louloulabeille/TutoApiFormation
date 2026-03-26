@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TutoApiFormation.Domain.Infrastructure
+namespace TutoApiFormation.Domain
 {
     /// <summary>
     /// Classe d'infrastructure pour enregistrer les différentes categories de l'application
@@ -14,5 +14,8 @@ namespace TutoApiFormation.Domain.Infrastructure
         public required string Title {  get; set; }
         public string? Message { get; set; }
         public string? Image { get; set; }
+
+        // - cardinalite 0,n
+        public List<Formation>? Formations { get; set; }
     }
 }

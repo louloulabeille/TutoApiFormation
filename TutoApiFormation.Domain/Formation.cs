@@ -12,5 +12,9 @@ namespace TutoApiFormation.Domain
         public string? Description { get; set; }
         public string? ImageUrl { get; set; }
         public string? Tag { get; set; }
+
+        // - cardinalite 1,1
+        public int CategorieId { get; set; }
+        public Categorie? Categorie {  get; set; }
     }
 }
