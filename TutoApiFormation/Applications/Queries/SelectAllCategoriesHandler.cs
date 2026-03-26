@@ -12,6 +12,12 @@ namespace TutoApiFormation.Applications.Queries
         #endregion
 
         #region implement interface 
+        /// <summary>
+        /// MediatR méthode qui retourne toutes les categories de cours
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<CategorieDTO>> Handle(SelectAllCategoriesQuery request, CancellationToken cancellationToken)
         {
             var result = _unit.Repository<Categorie>()!.GetAll().Select(item => new CategorieDTO()
@@ -19,7 +25,7 @@ namespace TutoApiFormation.Applications.Queries
                 Title = item.Title,
                 Message = item.Message,
                 Image = item.Image,
-                Count = new Random().Next(100).ToString() + " cours"
+                Count = _unit.Repository<Formation>()!.Where(f => f.CategorieId == item.Id).Count().ToString() + " cours"
             }).ToList();
 
             return result;

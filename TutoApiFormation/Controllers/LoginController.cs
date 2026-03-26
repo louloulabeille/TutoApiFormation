@@ -24,25 +24,33 @@ namespace TutoApiFormation.Controllers
         [HttpPost]
         public async Task<IActionResult> AddUser([FromBody] IdentityDTO  identity)
         {
-            if (identity is null || identity.Password is null) return this.BadRequest("Login ou mot de passe manquand");
-
-            var user = new IdentityUser(identity.Email!)
+            try
             {
-                Email = identity.Email,
-                UserName = identity.Name ?? identity.Email,
-            };
+                if (identity is null || identity.Password is null) return this.BadRequest("Login ou mot de passe manquand");
 
-            var success = await _signInManager.UserManager.CreateAsync(user, identity.Password);
+                var user = new IdentityUser(identity.Email!)
+                {
+                    Email = identity.Email,
+                    UserName = identity.Name ?? identity.Email,
+                };
 
-            if (success.Succeeded)
+                var success = await _signInManager.UserManager.CreateAsync(user, identity.Password);
+
+                if (success.Succeeded)
+                {
+                    identity.Tokken = SecurityTokenGenerate.GenerateJwtToken(user, _options);
+                    identity.Password = "";
+                }
+                else
+                    return BadRequest(success.Errors);
+
+                return this.Ok(identity);
+            }catch(Exception ex)
             {
-                identity.Tokken = SecurityTokenGenerate.GenerateJwtToken(user, _options);
-                identity.Password = "";
+                Console.WriteLine($"{DateTime.Now}--Error Message : {ex.Message}");
+                return this.Problem("internal Problem.");
             }
-            else
-                return BadRequest(success.Errors);
-
-            return this.Ok(identity);
+            
         }
 
 
