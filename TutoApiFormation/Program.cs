@@ -35,7 +35,8 @@ builder.Logging.AddFilterMediaRLogger();
 builder.Services.AddCustomIdentityUser();
 builder.Services.AddDefaultAuthenticate(builder.Configuration);
 
-//- 
+//- Injection dépendance IOption<T> 
+builder.Services.AddSecurityOptionsValue(builder.Configuration);
 
 var app = builder.Build();
 
