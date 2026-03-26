@@ -38,6 +38,9 @@ builder.Services.AddDefaultAuthenticate(builder.Configuration);
 //- Injection dépendance IOption<T> 
 builder.Services.AddSecurityOptionsValue(builder.Configuration);
 
+//- Mise en place par défaut de Authorize sur tous les controlleurs qui seront créés
+builder.Services.AddAuthorizeAllController();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

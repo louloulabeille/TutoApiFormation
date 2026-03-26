@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -8,6 +9,7 @@ using TutoApiFormation.Applications.Security;
 
 namespace TutoApiFormation.Controllers
 {
+    [AllowAnonymous] // -- pour désactiver Autorize sur ce controller
     [Route("api/v1/[controller]")]
     [ApiController]
     public class LoginController(SignInManager<IdentityUser> signInManager, IOptions<SecurityJwtBearer> options ) : ControllerBase
