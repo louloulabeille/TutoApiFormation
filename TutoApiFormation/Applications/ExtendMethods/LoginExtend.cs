@@ -73,8 +73,8 @@ namespace TutoApiFormation.Applications.ExtendMethods
                     options.SaveToken = true;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateIssuer = false, // - je n'ai qu'une APi pour le momment, pas besoin de gestion de back et front 
-                        ValidateAudience = true,
+                        ValidateIssuer = true, // - je n'ai qu'une APi pour le momment, pas besoin de gestion de back et front 
+                        ValidateAudience = false,
                         ValidateLifetime = true,
                         ValidateActor = false,
                         ValidateIssuerSigningKey = true,

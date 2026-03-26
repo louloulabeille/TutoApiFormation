@@ -22,6 +22,7 @@ namespace TutoApiFormation.Applications.Queries
         {
             var result = _unit.Repository<Categorie>()!.GetAll().Select(item => new CategorieDTO()
             {
+                Id = item.Id,
                 Title = item.Title,
                 Message = item.Message,
                 Image = item.Image,

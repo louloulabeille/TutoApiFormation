@@ -8,7 +8,7 @@ namespace TutoApiFormation.Applications.DTO.Infrastructure
     /// </summary>
     public class CategorieDTO
     {
-        //public int Id { get; set; }
+        public int Id { get; set; }
         //[JsonPropertyName("Title")]
         public required string Title { get; set; }
         //[JsonPropertyName("Message")]
