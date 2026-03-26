@@ -17,8 +17,8 @@ namespace TutoApiformation.Infrastructure.Database.TypeConfiguration
             builder.Property(f => f.Name).IsRequired();
             builder.Property(f => f.Description).HasColumnType("text");
 
-            builder.HasIndex(f => f.Tag).HasDatabaseName("TagIndex");
-            builder.HasIndex(f => f.Id).HasDatabaseName("IdIndex");
+            builder.HasIndex(f => f.Tag).HasDatabaseName("TagIndexFormation");
+            builder.HasIndex(f => f.Id).HasDatabaseName("IdIndexFormation");
         }
     }
 }

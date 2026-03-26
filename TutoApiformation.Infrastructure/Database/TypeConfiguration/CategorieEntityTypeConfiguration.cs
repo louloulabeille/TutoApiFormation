@@ -16,7 +16,7 @@ namespace TutoApiformation.Infrastructure.Database.TypeConfiguration
             builder.Property(c=>c.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Property(c => c.Title).IsRequired();
 
-            builder.HasIndex(c => c.Id).HasDatabaseName("IdIndex");
+            builder.HasIndex(c => c.Id).HasDatabaseName("IdIndexCategorie");
         }
     }
 }
