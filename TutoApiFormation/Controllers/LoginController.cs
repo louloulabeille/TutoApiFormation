@@ -38,7 +38,7 @@ namespace TutoApiFormation.Controllers
 
                 if (success.Succeeded)
                 {
-                    identity.Tokken = SecurityTokenGenerate.GenerateJwtToken(user, _options);
+                    identity.Token = SecurityTokenGenerate.GenerateJwtToken(user, _options);
                     identity.Password = "";
                 }
                 else
@@ -68,7 +68,7 @@ namespace TutoApiFormation.Controllers
                 var result = await _signInManager.CheckPasswordSignInAsync(user, identity.Password!, true);
                 if (result.Succeeded)
                 {
-                    identity.Tokken = SecurityTokenGenerate.GenerateJwtToken(user, _options);
+                    identity.Token = SecurityTokenGenerate.GenerateJwtToken(user, _options);
                     identity.Password = string.Empty;
                     return this.Ok(identity);
                 }
