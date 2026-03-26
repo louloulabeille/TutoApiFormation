@@ -17,10 +17,8 @@ namespace TutoApiformation.Infrastructure.Database
         #endregion
 
         #region public properties
-        // - Infrastructure
         public DbSet<Categorie> Categories { get; set; }
 
-        // - Domain Métier
         public DbSet<Formation> Formations { get; set; }
         #endregion
 
