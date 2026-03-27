@@ -69,6 +69,7 @@ namespace TutoApiFormation.Controllers
                 if (result.Succeeded)
                 {
                     identity.Token = SecurityTokenGenerate.GenerateJwtToken(user, _options);
+                    identity.Name = user.UserName;
                     identity.Password = string.Empty;
                     return this.Ok(identity);
                 }
