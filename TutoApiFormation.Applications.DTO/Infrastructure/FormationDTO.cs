@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TutoApiFormation.Applications.DTO
+namespace TutoApiFormation.Applications.DTO.Infrastructure
 {
     public class FormationDTO
     {

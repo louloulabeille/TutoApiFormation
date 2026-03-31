@@ -10,6 +10,6 @@ namespace TutoApiFormation.Applications.DTO.Http
     {
         public HttpStatusCode StatusCode { get; set; }
         public string? HttpContentMessage { get; set; }
-        public IdentityDTO? IdentityDTO { get; set; }
+        public IdentityDTO? Identity { get; set; }
     }
 }
