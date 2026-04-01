@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using TutoApiformation.Interface.UnitOfWork;
-using TutoApiFormation.Applications.DTO;
+using TutoApiFormation.Applications.DTO.Infrastructure;
 using TutoApiFormation.Domain;
 
 namespace TutoApiFormation.Applications.Queries
