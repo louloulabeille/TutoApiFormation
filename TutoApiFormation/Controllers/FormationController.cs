@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TutoApiFormation.Applications.Queries;
@@ -16,6 +17,7 @@ namespace TutoApiFormation.Controllers
 
 
         #region public Action
+        //[AllowAnonymous]
         [Route("FormationByCategorieId")]
         [HttpGet]
         public async Task<IActionResult> GetAllByIdCategorie([FromQuery] int? id)
