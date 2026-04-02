@@ -27,6 +27,7 @@ namespace TutoApiFormation.Applications.Queries
             var result = request.CategorieId is not null ? [..dbSet.Where(f => f.CategorieId == request.CategorieId )
                 .Select(f => new FormationDTO() 
                 { 
+                    Id = f.Id,
                     Name = f.Name,
                     Description = f.Description,
                     Price = f.Price,
@@ -35,6 +36,7 @@ namespace TutoApiFormation.Applications.Queries
                 })] :
                 dbSet.GetAll().Select(f => new FormationDTO() 
                 {
+                    Id = f.Id,
                     Name = f.Name,
                     Description = f.Description,
                     Price = f.Price,
