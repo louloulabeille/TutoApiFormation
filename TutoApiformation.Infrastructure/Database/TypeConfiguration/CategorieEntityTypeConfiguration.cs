@@ -15,6 +15,7 @@ namespace TutoApiformation.Infrastructure.Database.TypeConfiguration
             builder.HasKey(c => c.Id);
             builder.Property(c=>c.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Property(c => c.Title).IsRequired();
+            builder.HasMany(c => c.Formations).WithOne(f => f.Categorie).HasForeignKey(f => f.CategorieId);
 
             builder.HasIndex(c => c.Id).HasDatabaseName("IdIndexCategorie");
         }

@@ -7,6 +7,8 @@ namespace TutoApiFormation.Domain
     public class Ressource
     {
         public int Id { get; set; }
-        public string? Lien { get; set; }
+        public required string Lien { get; set; }
+        public int FormationId { get; set; }
+        public Formation? Formation { get; set; }
     }
 }
