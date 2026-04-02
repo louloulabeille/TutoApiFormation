@@ -70,7 +70,7 @@ namespace TutoApiFormation.Controllers
                 {
                     identity.Token = SecurityTokenGenerate.GenerateJwtToken(user, _options);
                     identity.Name = user.UserName;
-                    identity.Password = string.Empty;
+                    //identity.Password = string.Empty;
                     return this.Ok(identity);
                 }
 
