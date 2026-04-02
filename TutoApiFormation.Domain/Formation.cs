@@ -16,5 +16,13 @@ namespace TutoApiFormation.Domain
         // - cardinalite 1,1
         public int CategorieId { get; set; }
         public Categorie? Categorie {  get; set; }
+
+        // - cardinalite 0,n
+        public List<Video>? Videos { get; set; }
+
+
+        // - cardinalite 0,1
+        public int? RessourcesId { get; set; }
+        public Ressource? Ressource { get; set; }
     }
 }
