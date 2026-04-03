@@ -14,16 +14,22 @@ namespace TutoApiFormation.Controllers
         private readonly IMediator _mediaR = mediaR;
         #endregion
 
-
-        public async Task<IActionResult> GetByFormationAsync([FromQuery] int id)
+        [Route("GetAllCoursByIdFormation")]
+        [HttpGet]
+        public async Task<IActionResult> GetByFormationAsync([FromQuery] int? id)
         {
 
             // - IMediator découplage entre la demande de données et les ordres
             try
             {
-                var categories = await this._mediaR.Send(new SelectAllCategoriesQuery());
-                if (!categories.Any()) return this.BadRequest("Empty or internal problem.");
-                else return this.Ok(categories);
+                if (id is null) return this.BadRequest("Bad request id is null");
+
+                var formationVideoDTO = await this._mediaR.Send(new SelectAllCoursByIdFormationQuery() { 
+                    IdFormation = id.Value
+                });
+
+                if (!formationVideoDTO.Videos!.Any()) return this.BadRequest("Empty or internal problem.");
+                else return this.Ok(formationVideoDTO);
             }
             catch (Exception ex)
             {
