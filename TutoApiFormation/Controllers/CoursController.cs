@@ -16,7 +16,7 @@ namespace TutoApiFormation.Controllers
 
         [Route("GetAllCoursByIdFormation")]
         [HttpGet]
-        public async Task<IActionResult> GetByFormationAsync([FromQuery] int? id)
+        public async Task<IActionResult> GetAllByFormationAsync([FromQuery] int? id)
         {
 
             // - IMediator découplage entre la demande de données et les ordres
@@ -28,7 +28,7 @@ namespace TutoApiFormation.Controllers
                     IdFormation = id.Value
                 });
 
-                if (!formationVideoDTO.Videos!.Any()) return this.BadRequest("Empty or internal problem.");
+                if (formationVideoDTO.Videos!.Count == 0) return this.BadRequest("Empty or internal problem.");
                 else return this.Ok(formationVideoDTO);
             }
             catch (Exception ex)
