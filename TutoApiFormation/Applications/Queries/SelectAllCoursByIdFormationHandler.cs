@@ -18,7 +18,9 @@ namespace TutoApiFormation.Applications.Queries
 
             var result = new FormationVideosDTO()
             {
-                Videos = videoDbset is not null ? videoDbset.Where(v => v.FormationId == request.IdFormation).Select(v => new VideoDTO
+                Videos = videoDbset is not null ? videoDbset.Where(v => v.FormationId == request.IdFormation)
+                .OrderBy(v=>v.Id)
+                .Select(v => new VideoDTO
                 {
                     Title = v.Title,
                     Description = v.Description,
